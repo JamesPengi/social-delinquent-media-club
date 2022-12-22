@@ -14,7 +14,7 @@ model Media {
   id            String               @id @default(cuid())
   name          String               @unique
   genre         Genres[]
-  watchedAt     DateTime
+  watchedAt     DateTime?
   watched       Boolean              @default(false)
   peopleWatched MediaPeopleWatched[]
   createdAt     DateTime             @default(now())
@@ -45,4 +45,6 @@ enum Genres {
   Animated
   Action
   Adventure
+  Sadge
+  JapaneseAnimation
 }

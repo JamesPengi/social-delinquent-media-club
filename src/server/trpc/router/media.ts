@@ -8,7 +8,7 @@ export const mediaRouter = router({
   newMedia: publicProcedure
     .input(
       z.object({
-        mediaType: z.enum(["movie", "tv"]),
+        mediaType: z.enum(["Movie", "TV"]),
         name: z.string(),
         genre: z.enum([
           "Drama",
@@ -27,6 +27,7 @@ export const mediaRouter = router({
         data: {
           name: input.name,
           genre: input.genre,
+          type: input.mediaType,
         },
       });
     }),

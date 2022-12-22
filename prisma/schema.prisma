@@ -12,6 +12,7 @@ datasource db {
 
 model Media {
   id            String               @id @default(cuid())
+  type          MediaTypes
   name          String               @unique
   genre         Genres[]
   watchedAt     DateTime?
@@ -36,6 +37,11 @@ model MediaPeopleWatched {
   updatedAt DateTime @updatedAt
 
   @@id([mediaId, peopleId])
+}
+
+enum MediaTypes {
+  Movie
+  TV
 }
 
 enum Genres {

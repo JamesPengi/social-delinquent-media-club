@@ -4,8 +4,8 @@ import { z } from "zod";
 import { trpc } from "../utils/trpc";
 
 const schema = z.object({
-  mediaType: z.enum(["movie", "tv"]),
-  name: z.string(),
+  mediaType: z.enum(["Movie", "TV"]),
+  name: z.string().min(1),
   genre: z.enum([
     "Drama",
     "Comedy",
@@ -53,8 +53,8 @@ const AddMedia: React.FC = () => {
             className="p-0.5 dark:bg-slate-700"
             {...register("mediaType")}
           >
-            <option value="movie">Movie</option>
-            <option value="tv">TV</option>
+            <option value="Movie">Movie</option>
+            <option value="TV">TV</option>
           </select>
         </label>
 
